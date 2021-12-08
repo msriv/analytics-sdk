@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An analytics sdk that can easily batch your events and send to your analytics endpoint",
   "main": "index.ts",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
@@ -11,14 +12,19 @@
     "fix": "gts fix",
     "prepare": "yarn run compile",
     "pretest": "yarn run compile",
-    "posttest": "yarn run lint"
+    "posttest": "yarn run lint",
+    "start": "yarn compile && node ./build/src/index.js"
   },
   "author": "msriv",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^14.11.2",
+    "gts": "^3.1.0",
     "ts-lint": "^4.5.1",
     "typescript": "^4.0.3",
-    "gts": "^3.1.0",
-    "@types/node": "^14.11.2"
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2"
   }
 }
