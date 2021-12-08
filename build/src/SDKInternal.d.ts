@@ -4,7 +4,7 @@ declare class SDKInternal {
     store: IStore;
     event: Event;
     constructor();
-    registerEvent: (eventName: any) => void;
+    registerEvent: (eventName: string | string[]) => void;
     getEvents: () => any;
     getCurrentStoreState: () => any;
 }

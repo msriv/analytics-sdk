@@ -1,4 +1,4 @@
-declare enum LOG_LEVEL {
+export declare enum LOG_LEVEL {
     DEBUG = "DEBUG",
     INFO = "INFO",
     WARN = "WARN",
