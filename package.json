@@ -1,0 +1,24 @@
+{
+  "name": "analytics-sdk-internal",
+  "version": "1.0.0",
+  "description": "An analytics sdk that can easily batch your events and send to your analytics endpoint",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "yarn run compile",
+    "pretest": "yarn run compile",
+    "posttest": "yarn run lint"
+  },
+  "author": "msriv",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-lint": "^4.5.1",
+    "typescript": "^4.0.3",
+    "gts": "^3.1.0",
+    "@types/node": "^14.11.2"
+  }
+}
