@@ -1,34 +1,61 @@
 import {LOG_LEVEL} from './utils/constants';
 class Logger {
   constructor() {}
+  /* 
+    LOG Format
+    Timestamp - Timestamp at which the log was posted,
+    Severity Level - Severity Level of the log,
+    TAG - To tag the log with custom user provided tag,
+    message - message is used to make the log verbose,
+    ...args - Extra arguments for users to add for making the log verbose
+  */
 
-  info = (message: any) => {
-    console.info('\x1b[36m%s\x1b[0m', {
-      level: LOG_LEVEL.INFO,
-      message,
-    });
+  info = (TAG: string, message: string, {...args}: any = {}) => {
+    console.info(
+      new Date().getTime(),
+      ` \x1b[36m${LOG_LEVEL.INFO}\x1b[0m `,
+      `[ ${TAG} ] `,
+      {
+        message,
+        ...args,
+      }
+    );
   };
 
-  warn = (message: any) => {
-    console.warn('\x1b[33m%s\x1b[0m', {
-      level: LOG_LEVEL.WARN,
-      message,
-    });
+  warn = (TAG: string, message: string, {...args}: any = {}) => {
+    console.warn(
+      new Date().getTime(),
+      ` \x1b[33m${LOG_LEVEL.WARN}\x1b[0m `,
+      `[ ${TAG} ] `,
+      {
+        message,
+        ...args,
+      }
+    );
   };
 
-  debug = (message: any, ...args: any[]) => {
-    console.debug({
-      level: LOG_LEVEL.DEBUG,
-      message,
-      ...args,
-    });
+  debug = (TAG: string, message: string, {...args}: any = {}) => {
+    console.debug(
+      new Date().getTime(),
+      ` \x1b[37m${LOG_LEVEL.DEBUG}\x1b[0m `,
+      `[ ${TAG} ] `,
+      {
+        message,
+        ...args,
+      }
+    );
   };
 
-  error = (message: any) => {
-    console.error('\x1b[31m%s\x1b[0m', {
-      level: LOG_LEVEL.ERROR,
-      message,
-    });
+  error = (TAG: string, message: string, {...args}: any = {}) => {
+    console.error(
+      new Date().getTime(),
+      ` \x1b[31m${LOG_LEVEL.ERROR}\x1b[0m `,
+      `[ ${TAG} ] `,
+      {
+        message,
+        ...args,
+      }
+    );
   };
 }
 
